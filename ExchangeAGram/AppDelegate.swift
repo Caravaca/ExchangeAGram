@@ -14,10 +14,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // MAKING A CACHE WITH DEFAULT OPTIONS
+        
+        let cache = NSURLCache(memoryCapacity: 8 * 1024 * 1024, diskCapacity: 20 * 1024 * 1024, diskPath: nil)
+        NSURLCache.setSharedURLCache(cache)
+        
+        FBLoginView.self
+        FBProfilePictureView.self
+        
         return true
+    }
+    
+    // Allows to keep opening the app once you are signed in
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        var wasHandled: Bool = FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
+        
+        return wasHandled
+    }
+    
+    // THIS NEXT FUNCTION CLEARS THE CACHE IN CASE OF MEMORY ISSUE
+    
+    func applicationDidReceiveMemoryWarning(application: UIApplication) {
+        
+        NSURLCache.sharedURLCache().removeAllCachedResponses()
     }
 
     func applicationWillResignActive(application: UIApplication) {
