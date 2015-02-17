@@ -106,13 +106,9 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         feedItem.image = imageData
         feedItem.caption = "test caption"
         feedItem.thumbnail = thumbnailData
-        
-        if let location = locationManager {
-            feedItem.latitude = locationManager.location.coordinate.latitude
-            feedItem.longitude = locationManager.location.coordinate.longitude
-        }else {
-            println("No location available")
-        }
+        feedItem.latitude = locationManager.location.coordinate.latitude
+        feedItem.longitude = locationManager.location.coordinate.longitude
+
         
         let UUID = NSUUID().UUIDString
         feedItem.uniqueID = UUID

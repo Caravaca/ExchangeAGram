@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="txx-ZS-lkY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Feed View Controller-->
@@ -16,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G0P-Rl-Ese">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G0P-Rl-Ese">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bsu-2y-KUl">
@@ -58,6 +59,12 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="G0P-Rl-Ese" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="ESl-Jc-9zX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="G0P-Rl-Ese" secondAttribute="bottom" id="lfJ-5t-R7d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="G0P-Rl-Ese" secondAttribute="trailing" constant="-16" id="r2e-Mi-8Uo"/>
+                            <constraint firstItem="G0P-Rl-Ese" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="xGD-rK-FQW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DXb-ym-ynw">
                         <barButtonItem key="leftBarButtonItem" title="Profile" id="UBG-qY-b6j">
@@ -141,11 +148,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Tz-TK-AyJ">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Tz-TK-AyJ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Tz-TK-AyJ" secondAttribute="trailing" constant="-16" id="Pha-GE-VyI"/>
+                            <constraint firstItem="7Tz-TK-AyJ" firstAttribute="leading" secondItem="9bP-ZE-cA7" secondAttribute="leadingMargin" constant="-16" id="kB3-GB-xvW"/>
+                            <constraint firstItem="7Tz-TK-AyJ" firstAttribute="top" secondItem="cZg-jU-Han" secondAttribute="bottom" constant="-64" id="zUH-Yl-BdC"/>
+                            <constraint firstItem="zvb-7D-8Iz" firstAttribute="top" secondItem="7Tz-TK-AyJ" secondAttribute="bottom" id="zgG-FY-zYL"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="7Tz-TK-AyJ" id="JnB-UK-w3t"/>
